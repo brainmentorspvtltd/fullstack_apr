@@ -1,0 +1,485 @@
+show();
+function show(){
+console.log("I am Show ");
+}
+VM106:3 I am Show 
+undefined
+function test(){
+// var m;
+console.log(m); // undefined
+if(10>2){
+// m = 1000;
+p = 9999; // window.p
+var m = 1000;
+}
+console.log(m);
+}
+
+undefined
+test();
+VM305:3 undefined
+VM305:9 1000
+undefined
+m;
+VM347:1 Uncaught ReferenceError: m is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM347:1
+p;
+9999
+window.p;
+9999
+function test(){
+'use strict';
+// var m;
+console.log(m); // undefined
+if(10>2){
+// m = 1000;
+p2 = 9999; // window.p
+var m = 1000;
+}
+console.log(m);
+}
+
+undefined
+show();
+VM106:3 I am Show 
+undefined
+test();
+VM416:4 undefined
+VM416:7 Uncaught ReferenceError: p2 is not defined
+    at test (<anonymous>:7:4)
+    at <anonymous>:1:1
+test @ VM416:7
+(anonymous) @ VM457:1
+var y = 100;
+undefined
+var z = function(){
+console.log("I am z ");
+}
+undefined
+typeof z;
+"function"
+z();
+VM627:2 I am z 
+undefined
+function disp(){
+console.log("I am Disp");
+}
+undefined
+disp();
+VM724:2 I am Disp
+undefined
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+window.disp;
+ƒ disp(){
+console.log("I am Disp");
+}
+var disp = 1000;
+undefined
+disp();
+VM860:1 Uncaught TypeError: disp is not a function
+    at <anonymous>:1:1
+(anonymous) @ VM860:1
+window.disp;
+1000
+var ff = 1000;
+undefined
+window.ff;
+1000
+let p = 1000;
+undefined
+let p2 = 2000;
+undefined
+window.p2;
+undefined
+p2;
+2000
+p2 = function(){
+console.log("iam p2");
+}
+ƒ (){
+console.log("iam p2");
+}
+p2();
+VM1149:2 iam p2
+undefined
+const add = function(){
+
+}
+undefined
+add = 200;
+VM1273:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM1273:1
+function calc(){
+var add = function (x,y){
+return x + y;
+}
+var sub = function (x,y){
+return x - y;
+}
+return [add, sub];
+}
+undefined
+calc()[0](100,200);
+300
+calc()[1](100,200);
+-100
+var e = calc();
+undefined
+e;
+(2) [ƒ, ƒ]0: ƒ (x,y)1: ƒ (x,y)length: 2__proto__: Array(0)
+function calc(){
+var add = function (x,y){
+return x + y;
+}
+var sub = function (x,y){
+return x - y;
+}
+return {"adder":add, "subtract":sub};
+}
+undefined
+var t = calc();
+undefined
+typeof t;
+"object"
+t;
+{adder: ƒ, subtract: ƒ}
+t.adder(10,20);
+30
+t.subtract(10,20);
+-10
+window.adder;
+undefined
+window.adder(10,20);
+VM1881:1 Uncaught TypeError: window.adder is not a function
+    at <anonymous>:1:8
+(anonymous) @ VM1881:1
+function calc(){
+var add = function (x,y){
+return x + y;
+}
+var sub = function (x,y){
+return x - y;
+}
+return {add, sub};
+}
+undefined
+var ff = calc();
+undefined
+ff;
+{add: ƒ, sub: ƒ}
+ff.add(100,200);
+300
+e;
+(2) [ƒ, ƒ]
+//var e2 ; // undefined
+e2(); // undefined() Type Error
+var e2 =  function(){
+console.log("I am e2");
+}
+VM2238:2 Uncaught TypeError: e2 is not a function
+    at <anonymous>:2:1
+(anonymous) @ VM2238:2
+function calc(){
+var add = function add (x,y){
+return x + y;
+}
+var sub = function sub(x,y){
+return x - y;
+}
+return {add, sub};
+}
+undefined
+var e = calc();
+undefined
+e;
+{add: ƒ, sub: ƒ}add: ƒ add(x,y)sub: ƒ sub(x,y)__proto__: Object
+function calc(w){
+var add = function add (x,y){
+return x + y + w;
+}
+var sub = function sub(x,y){
+return x - y - w;
+}
+return {add, sub};
+}
+undefined
+var t = calc(1000);
+undefined
+t;
+{add: ƒ, sub: ƒ}add: ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2336:2[[Scopes]]: Scopes[3]0: Closure (calc) {w: 1000}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}sub: ƒ sub(x,y)__proto__: Object
+t.add(1,2)
+1003
+function calc(w,q){
+var add = function add (x,y){
+return x + y + w;
+}
+var sub = function sub(x,y){
+return x - y - w;
+}
+return {add, sub};
+}
+undefined
+calc(100,200);
+{add: ƒ, sub: ƒ}add: ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2443:2[[Scopes]]: Scopes[3]0: Closure (calc) {w: 100}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}sub: ƒ sub(x,y)arguments: nullcaller: nulllength: 2name: "sub"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2443:5[[Scopes]]: Scopes[3]0: Closure (calc) {w: 100}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}__proto__: Object
+function calc(w,q){
+var add = function add (x,y){
+return x + y + w + q;
+}
+var sub = function sub(x,y){
+return x - y - w;
+}
+return {add, sub};
+}
+undefined
+calc(100,200);
+{add: ƒ, sub: ƒ}add: ƒ add(x,y)arguments: nullcaller: nulllength: 2name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2493:2[[Scopes]]: Scopes[3]0: Closure (calc) {q: 200, w: 100}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}sub: ƒ sub(x,y)arguments: nullcaller: nulllength: 2name: "sub"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2493:5[[Scopes]]: Scopes[3]0: Closure (calc) {q: 200, w: 100}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}__proto__: Object
+t.add(1,2)
+1003
+t = calc(100,200);
+{add: ƒ, sub: ƒ}
+t.add(1,2);
+303
+w;
+VM2626:1 Uncaught ReferenceError: w is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2626:1
+q;
+VM2636:1 Uncaught ReferenceError: q is not defined
+    at <anonymous>:1:1
+(anonymous) @ VM2636:1
+function counter(){
+var count = 0;
+count++;
+return count;
+}
+counter();
+1
+counter();
+1
+function init(){
+var count = 0;
+return function counter(){
+
+count++;
+return count;
+}
+}
+
+
+undefined
+var c  = init();
+undefined
+c();
+1
+c();
+2
+c();
+3
+c();
+4
+c();
+5
+c();
+6
+c();
+7
+typeof c;
+"function"
+var c = init();
+undefined
+c;
+ƒ counter(){
+
+count++;
+return count;
+}
+console.dir(c);
+VM3038:1 ƒ counter()arguments: nullcaller: nulllength: 0name: "counter"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2843:3[[Scopes]]: Scopes[3]0: Closure (init) {count: 0}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+c();
+1
+c();
+2
+c();
+3
+c();
+4
+c();
+5
+var fn = (function (){
+var count = 0;
+return function (){
+
+count++;
+return count;
+}
+})();
+
+
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+fn();
+6
+fn();
+7
+var fn = (function (){
+var count = 0;
+return function counter(){
+
+count++;
+return count;
+}
+})();
+
+
+undefined
+fn;
+ƒ counter(){
+
+count++;
+return count;
+}
+var fn = (function (){
+var count = 0;
+return function (){
+
+count++;
+return count;
+}
+})();
+
+
+undefined
+fn;
+ƒ (){
+
+count++;
+return count;
+}
+var fn = (function (){
+var count = 0;
+return function counter(){
+
+count++;
+return count;
+}
+})();
+
+
+undefined
+fn();
+1
+fn();
+2
+fn();
+3
+fn();
+4
+fn();
+5
+function show(){
+// var x; // undefined
+console.log(x);
+var x = 300;
+console.log(x);
+//x = 300;
+if(10>2){
+//x = 100;
+var x = 100;
+console.log(x);
+}
+// x = 200;
+var x = 200;
+console.log(x);
+}
+undefined
+show();
+VM3492:3 undefined
+VM3492:5 300
+VM3492:10 100
+VM3492:14 200
+undefined
+function show(){
+
+//console.log(x); // reference error
+let x = 300;
+console.log(x);
+//x = 300;
+if(10>2){
+//x = 100;
+let x = 100;
+console.log(x);
+}
+// x = 200;
+let x = 200;
+console.log(x);
+}
+VM3560:13 Uncaught SyntaxError: Identifier 'x' has already been declared
+function add(){
+(function(){ // var i;
+    //console.log(i); // undefined
+    for(var i = 0; i<arguments.length; i++){
+
+}
+})();
+console.log(i);
+}
+VM3772:1 Uncaught SyntaxError: Identifier 'add' has already been declared
+    at <anonymous>:1:1
+(anonymous) @ VM3772:1
+function add2(){
+(function(){ // var i;
+    //console.log(i); // undefined
+    for(var i = 0; i<arguments.length; i++){
+
+}
+})();
+console.log(i);
+}
+undefined
+add2();
+VM3777:8 Uncaught ReferenceError: i is not defined
+    at add2 (<anonymous>:8:13)
+    at <anonymous>:1:1
+add2 @ VM3777:8
+(anonymous) @ VM3798:1
+var fn = (function (){
+var count = 0;
+return function (){
+
+count++;
+return count;
+}
+})();
+undefined
+fn;
+ƒ (){
+
+count++;
+return count;
+}
+console.dir(fn);
+VM3862:1 ƒ anonymous()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3804:3[[Scopes]]: Scopes[3]0: Closure {count: 0}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+fn();
+1
+console.dir(fn);
+VM3888:1 ƒ anonymous()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3804:3[[Scopes]]: Scopes[3]0: Closure {count: 1}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+fn();
+2
+console.dir(fn);
+VM3903:1 ƒ anonymous()arguments: nullcaller: nulllength: 0name: ""prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM3804:3[[Scopes]]: Scopes[3]0: Closure {count: 2}1: Script {p: 1000, p2: ƒ, add: ƒ}2: Global {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
