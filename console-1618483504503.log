@@ -1,0 +1,76 @@
+var arr = [10,20];
+undefined
+arr instanceof Array;
+true
+arr;
+(2) [10, 20]0: 101: 20length: 2__proto__: Array(0)
+arr.__proto__== Array.prototype
+true
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+
+for(var i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+function show(){
+// var e;
+console.log(e);
+
+if(10>2){
+//e = 1000; // Assignment
+var e = 1000; // Hoisting
+}
+console.log(e);
+}
+undefined
+show();
+VM383:3 undefined
+VM383:9 1000
+undefined
+function show(){
+// var e;
+console.log(e); // undefined
+// e = 3000;
+var e = 3000;
+console.log(e);
+if(10>2){
+//e = 1000; // Assignment
+var e = 1000; // Hoisting
+console.log(e);
+}
+// e= 2000;
+var e = 2000;
+console.log(e);
+}
+undefined
+show();
+VM481:3 undefined
+VM481:6 3000
+VM481:10 1000
+VM481:14 2000
+undefined
+function show(){
+
+console.log(e); // ReferenceError
+
+if(10>2){
+
+let e = 1000; // Block Level
+console.log(e);
+}
+
+}
+undefined
+show();
+VM557:3 Uncaught ReferenceError: e is not defined
+    at show (<anonymous>:3:13)
+    at <anonymous>:1:1
+show @ VM557:3
+(anonymous) @ VM577:1

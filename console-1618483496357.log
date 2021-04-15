@@ -1,0 +1,522 @@
+var x = 100;
+undefined
+typeof x;
+"number"
+var y = new Number(1000);
+undefined
+typeof y;
+"object"
+y instanceof Number;
+true
+typeof Number;
+"function"
+x;
+100
+y;
+Number {1000}
+++x;
+101
+++y;
+1001
+y;
+1001
+typeof y;
+"number"
+var y = new Number(1000);
+undefined
+typeof y;
+"object"
+y.toLocaleString('hi-IN')
+"1,000"
+y.toLocaleString('fr-FR')
+"1 000"
+var y = new Number(1000.8888);
+undefined
+y.toLocaleString('fr-FR')
+"1 000,889"
+y.toLocaleString('hi-IN')
+"1,000.889"
+x;
+101
+y;
+Number {1000.8888}
+x;
+101
+y;
+Number {1000.8888}
+typeof x;
+"number"
+typeof y;
+"object"
+x.toLocaleString('hi-IN');
+"101"
+var g = "Hello";
+undefined
+var g1 = new String("Hello");
+undefined
+typeof g;
+"string"
+typeof g1;
+"object"
+g;
+"Hello"
+g1;
+String {"Hello"}
+g1.toUpperCase();
+"HELLO"
+g.toUpperCase();
+"HELLO"
+g;
+"Hello"
+typeof g;
+"string"
+g;
+"Hello"
+g.toUpperCase();
+"HELLO"
+g;
+"Hello"
+var s = 1000;
+undefined
+s.toFixed();
+"1000"
+s;
+1000
+var price= 999;
+undefined
+var price2 = price;
+undefined
+price2;
+999
+price2++;
+999
+price2;
+1000
+price;
+999
+var arr = [10,20,30,40,50,60,90];
+undefined
+var arr2 = arr;
+undefined
+arr2[0] = 100000;
+100000
+arr2;
+(7) [100000, 20, 30, 40, 50, 60, 90]
+arr;
+(7) [100000, 20, 30, 40, 50, 60, 90]
+arr == arr2;
+true
+var arr3 = Object.assign([],arr);
+undefined
+arr3;
+(7) [100000, 20, 30, 40, 50, 60, 90]
+arr;
+(7) [100000, 20, 30, 40, 50, 60, 90]
+arr3== arr;
+false
+arr3[0] = 1;
+1
+arr3;
+(7) [1, 20, 30, 40, 50, 60, 90]
+arr;
+(7) [100000, 20, 30, 40, 50, 60, 90]
+Object;
+ƒ Object() { [native code] }
+window;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+this;
+Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+window == this;
+true
+null == null
+true
+[] == []
+false
+[10,20] == [10,20]
+false
+function show(){
+console.log("I am Show ");
+}
+undefined
+show();
+VM2161:2 I am Show 
+undefined
+show(10);
+VM2161:2 I am Show 
+undefined
+show("Amit");
+VM2161:2 I am Show 
+undefined
+function add(x,y){
+    return x + y;
+}
+undefined
+typeof add;
+"function"
+add(10,20);
+30
+var t = add(10,20);
+undefined
+t;
+30
+function add(){
+console.log("I am Add ");
+}
+undefined
+add();
+VM2499:2 I am Add 
+undefined
+add(10,20);
+VM2499:2 I am Add 
+undefined
+add(10,"20");
+VM2499:2 I am Add 
+undefined
+console.dir(add);
+VM2616:1 ƒ add()arguments: nullcaller: nulllength: 0name: "add"prototype: {constructor: ƒ}__proto__: ƒ ()[[FunctionLocation]]: VM2499:1[[Scopes]]: Scopes[1]
+undefined
+function add(){
+console.log("I am Add ", arguments.length);
+}
+undefined
+add();
+VM2682:2 I am Add  0
+undefined
+add(10,20);
+VM2682:2 I am Add  2
+undefined
+add(10,20,"30");
+VM2682:2 I am Add  3
+undefined
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum+=arguments[i];
+}
+return sum;
+}
+undefined
+add();
+0
+add(1,2,3,4,5,6);
+21
+add(1,"2",3,4,5,6);
+"123456"
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum+=parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,"2",3,4,5,6);
+21
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,"two","3",4,5,6);
+19
+function three(){
+return "100";
+}
+undefined
+function three(){
+return "3";
+}
+undefined
+add(1,2,three,"four","5");
+8
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,three,"four","5");
+11
+parseInt(1000);
+1000
+parseInt("1000");
+1000
+parseInt(three);
+NaN
+function add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+var arr = arguments[i];
+var sum2 = 0;
+for(let j=0; j<arr.length; j++){
+if(typeof arr[j]==="function"){
+arr[j] = arr[j]();
+}
+sum2+=isNaN(parseInt(arr[j]))?0:parseInt(arr[j]);
+}
+arguments[i] = sum2;
+}
+else
+if(typeof arguments[i]==="function"){
+arguments[i] = arguments[i]();
+}
+sum+=isNaN(parseInt(arguments[i]))?0:parseInt(arguments[i]);
+}
+return sum;
+}
+undefined
+add(1,2,three,"four","5",["2",1]);
+14
+function jQuery(){
+console.log("JQuery Fn ");
+}
+undefined
+var $ = jQuery;
+undefined
+$;
+ƒ jQuery(){
+console.log("JQuery Fn ");
+}
+add;
+ƒ add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+var arr = arguments[i];
+var sum2 = 0;
+for(let j=0; j<arr…
+var adder = add;
+undefined
+adder;
+ƒ add(){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<arguments.length; i++){
+if(arguments[i] instanceof Array){
+var arr = arguments[i];
+var sum2 = 0;
+for(let j=0; j<arr…
+adder(10,20);
+30
+$();
+VM3906:2 JQuery Fn 
+undefined
+function add(...args){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<args.length; i++){
+if(typeof args[i]==="function"){
+args[i] = args[i]();
+}
+sum+=isNaN(parseInt(args[i]))?0:parseInt(args[i]);
+}
+return sum;
+}
+undefined
+add(10,20,30);
+60
+function add(...x,...args){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<args.length; i++){
+if(typeof args[i]==="function"){
+args[i] = args[i]();
+}
+sum+=isNaN(parseInt(args[i]))?0:parseInt(args[i]);
+}
+return sum;
+}
+VM4268:1 Uncaught SyntaxError: Rest parameter must be last formal parameter
+function add(x,...args){
+//console.log("I am Add ", arguments.length);
+var sum = 0;
+for(var i = 0 ; i<args.length; i++){
+if(typeof args[i]==="function"){
+args[i] = args[i]();
+}
+sum+=isNaN(parseInt(args[i]))?0:parseInt(args[i]);
+}
+return sum;
+}
+undefined
+add(10,20,30);
+50
+var arr = [10,20,30];
+undefined
+var arr2 = [100,200,300];
+undefined
+var arr3 = [...arr];
+undefined
+arr3;
+(3) [10, 20, 30]
+arr3== arr;
+false
+arr3[0] =111;
+111
+arr;
+(3) [10, 20, 30]
+arr3;
+(3) [111, 20, 30]
+var arr3 = [...arr, ...arr2];
+undefined
+arr3;
+(6) [10, 20, 30, 100, 200, 300]
+var arr4 = [arr, arr2];
+undefined
+arr4;
+(2) [Array(3), Array(3)]
+var obj = {id:1001,name:'Ram'};
+undefined
+var obj2 = {salary:8888, id:1002};
+undefined
+var obj3 = {...obj, ...obj2};
+undefined
+obj3;
+{id: 1002, name: "Ram", salary: 8888}
+function adder(x,y){
+return x + y;
+}
+undefined
+adder();
+NaN
+undefined + undefined;
+NaN
+function adder(x=0,y=0){
+return x + y;
+}
+undefined
+adder();
+0
+adder(1000);
+1000
+adder(1000,2000);
+3000
+var f ;
+undefined
+typeof f;
+"undefined"
+if(typeof f ==='undefined'){
+f = 0;
+}
+0
+adder(1000,'');
+"1000"
+adder(10000, null)
+10000
+adder(1000, NaN);
+NaN
+var g1 ;
+undefined
+var g11;
+undefined
+g11;
+undefined
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5434:5 Falsy
+undefined
+g11 = 0;
+0
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5461:5 Falsy
+undefined
+g11 = 1;
+1
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5488:2 Truthy
+undefined
+g1 = null;
+null
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5516:2 Truthy
+undefined
+g11 ;
+1
+g11 = null;
+null
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5596:5 Falsy
+undefined
+g11 = undefined;
+undefined
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5631:5 Falsy
+undefined
+g11 = '';
+""
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5658:5 Falsy
+undefined
+g11 = NaN;
+NaN
+if(g11){
+console.log("Truthy");
+}
+else{
+console.log("Falsy");
+}
+VM5687:5 Falsy
+undefined
+function adder(x,y){
+x = x || 0;
+y = y || 0;
+return x + y;
+}
+undefined
+adder(NaN, NaN)
+0
+adder(NaN, 10)
+10
+adder(NaN, undefined);
+0
+adder(100, 200);
+300
