@@ -1,0 +1,429 @@
+var x;
+undefined
+typeof x;
+"undefined"
+x = 100;
+100
+x;
+100
+typeof x;
+"number"
+x=1;
+1
+typeof x;
+"number"
+x = 100000000;
+100000000
+typeof x;
+"number"
+x = 90.20;
+90.2
+typeof x;
+"number"
+x = 100/0;
+Infinity
+typeof x;
+"number"
+var y = "100";
+undefined
+x;
+Infinity
+x = 100;
+100
+typeof x;
+"number"
+typeof y;
+"string"
+x + y;
+"100100"
+"Price is "+x;
+"Price is 100"
+100 + 100
+200
+100 + "100"
+"100100"
+100 - 100
+0
+100 - "100"
+0
+"Amit" + " Srivastava"
+"Amit Srivastava"
+"100"-"100"
+0
+"ten"-"one"
+NaN
+var amount = "";
+undefined
+var qty = 10;
+undefined
+amount * qty;
+0
+var amount = "ten";
+undefined
+amount * qty;
+NaN
+var f = amount * qty;
+undefined
+f;
+NaN
+typeof f;
+"number"
+var a= 100;
+undefined
+var b = "1000";
+undefined
+a + b;
+"1001000"
+a + parseInt(b)
+1100
+parseInt("Amit");
+NaN
+NaN + 1000
+NaN
+parseFloat("90.888");
+90.888
+parseInt("90.888");
+90
+var price = NaN;
+undefined
+isNaN(price);
+true
+isNaN(price)?0:price;
+0
+x = 1000/0;
+Infinity
+x;
+Infinity
+typeof x;
+"number"
+x = 1000/ "Amit";
+NaN
+x;
+NaN
+typeof x;
+"number"
+isFinite(Infinity);
+false
+var name = "Amit";
+undefined
+typeof name;
+"string"
+name = 'Amit';
+"Amit"
+name = 'A';
+"A"
+typeof name;
+"string"
+name = `hgdjfhgjhfjkghkjfdhgkjhfdjkghjkfdhgjkhfdjkgh
+hgdfjkghjkfdhgjkhdfjkgh
+gdfhkjghdfjkg
+gdfhgjk`;
+"hgdjfhgjhfjkghkjfdhgkjhfdjkghjkfdhgjkhfdjkgh
+hgdfjkghjkfdhgjkhdfjkgh
+gdfhkjghdfjkg
+gdfhgjk"
+typeof name;
+"string"
+a;
+100
+b;
+"1000"
+b = 1000;
+1000
+const MAX = 1000;
+undefined
+MAX++;
+VM1919:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:4
+(anonymous) @ VM1919:1
+MAX = 100000;
+VM1947:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM1947:1
+MAX = 'Hello'
+VM1989:1 Uncaught TypeError: Assignment to constant variable.
+    at <anonymous>:1:5
+(anonymous) @ VM1989:1
+a;
+100
+b ;
+1000
+"A is "+a+" and b is "+b;
+"A is 100 and b is 1000"
+`A is ${a} and B is ${b}`;
+"A is 100 and B is 1000"
+console.log(`A is ${a} and B is ${b}`);
+VM2205:1 A is 100 and B is 1000
+undefined
+var f = true;
+undefined
+typeof f;
+"boolean"
+f = false;
+false
+typeof f;
+"boolean"
+true + true
+2
+true - false
+1
+var t = 5734985784385465846584735
+undefined
+typeof t;
+"number"
+t = 100000434324n;
+100000434324n
+typeof t;
+"bigint"
+var t1 = Number.MAX_SAFE_INTEGER;
+undefined
+t1;
+9007199254740991
+typeof t1;
+"number"
+t1++;
+9007199254740991
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1++;
+9007199254740992
+t1 = 9007199254740992n;
+9007199254740992n
+typeof t1;
+"bigint"
+t1++;
+9007199254740992n
+t1++;
+9007199254740993n
+t1++;
+9007199254740994n
+t1++;
+9007199254740995n
+t1++;
+9007199254740996n
+t1++;
+9007199254740997n
+var ff = t1 + t1;
+undefined
+typeof ff;
+"bigint"
+t1 + 4343;
+VM2775:1 Uncaught TypeError: Cannot mix BigInt and other types, use explicit conversions
+    at <anonymous>:1:4
+(anonymous) @ VM2775:1
+t1 + 4343n;
+9007199254745341n
+t1 = 5464565465465n;
+5464565465465n
+var e = "645543543543543543543543"
+undefined
+var d = BigInt(e);
+undefined
+typeof d;
+"bigint"
+typeof BigInt;
+"function"
+var arr = [10,20,30,40,50,60,90];
+undefined
+var x = 10;
+undefined
+typeof arr;
+"object"
+arr = [10,"20",true,[90,"100"]];
+(4) [10, "20", true, Array(2)]
+arr instanceof Array;
+true
+typeof Array;
+"function"
+Array
+ƒ Array() { [native code] }
+arr.filter
+ƒ filter() { [native code] }
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+typeof Array;
+"function"
+typeof Array.prototype
+"object"
+;
+undefined
+arr;
+(4) [10, "20", true, Array(2)]
+typeof arr;
+"object"
+arr = null;
+null
+arr;
+null
+arr.length;
+VM3640:1 Uncaught TypeError: Cannot read property 'length' of null
+    at <anonymous>:1:5
+(anonymous) @ VM3640:1
+typeof arr;
+"object"
+var t = 1000;
+undefined
+typeof t;
+"number"
+t = null;
+null
+typeof t;
+"object"
+var arr = [10,20,30,40,50,60,90];
+undefined
+arr[10000];
+undefined
+arr.push(10000);
+8
+arr;
+(8) [10, 20, 30, 40, 50, 60, 90, 10000]
+arr.pop();
+10000
+arr;
+(7) [10, 20, 30, 40, 50, 60, 90]
+arr.shift();
+10
+arr;
+(6) [20, 30, 40, 50, 60, 90]
+arr.unshift(188);
+7
+arr;
+(7) [188, 20, 30, 40, 50, 60, 90]
+var x = 100;
+undefined
+typeof x;
+"number"
+x = null;
+null
+typeof x;
+"object"
+y;
+"100"
+y = 100;
+100
+x + y;
+100
+var fff ;
+undefined
+typeof fff;
+"undefined"
+var f3 = null;
+undefined
+typeof f3;
+"object"
+undefined + 100
+NaN
+null + 100
+100
+10 == "10"
+true
+10=="ten"
+false
+10 == "100"
+false
+undefined == null
+true
+10 === "10"
+false
+10 === 10
+true
+undefined === null
+false
+10 == parseInt("ten")
+false
+var temp = [10,20,30,40,50,27,23];
+undefined
+temp[0];
+10
+var map = {"delhi":30, "mumbai":32};
+undefined
+map['delhi'];
+30
+typeof map;
+"object"
+var w = new Map();
+undefined
+w;
+Map(0) {}
+var virat = {1:4, 2:0, 3:6,4:2,5:6,6:6};
+undefined
+virat[1];
+4
+virat[2];
+0
+virat[3];
+6
+typeof virat;
+"object"
+arr;
+(7) [188, 20, 30, 40, 50, 60, 90]
+typeof arr;
+"object"
+arr instanceof Array;
+true
+virat instanceof Array;
+false
+arr;
+(7) [188, 20, 30, 40, 50, 60, 90]0: 1881: 202: 303: 404: 505: 606: 90length: 7__proto__: Array(0)
+virat;
+{1: 4, 2: 0, 3: 6, 4: 2, 5: 6, 6: 6}1: 42: 03: 64: 25: 66: 6__proto__: Object
+typeof Array;
+"function"
+typeof Object
+"function"
+arr;
+(7) [188, 20, 30, 40, 50, 60, 90]0: 1881: 202: 303: 404: 505: 606: 90length: 7__proto__: Array(0)concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+var virat = {"ipl":{2021:{1:{1:1,2:3}}}};
+undefined
+virat['ipl'][2021][1][2]
+3
+virat.ipl
+{2021: {…}}
+virat.ipl.2021;
+VM5538:1 Uncaught SyntaxError: Unexpected number
+var virat = {"ipl year":2021};
+undefined
+virat.ipl year;
+VM5618:1 Uncaught SyntaxError: Unexpected identifier
+virat['ipl year'];
+2021
+var key = 'ipl year';
+undefined
+virat.key;
+undefined
+virat[key];
+2021
+// i am a comment
+undefined
+/*
+Multi Line
+*/
+undefined
+virat;
+{ipl year: 2021}
+var f = 'abc';
+var f2 = 10000;
+virat[f] = f2;
+10000
+virat;
+{ipl year: 2021, abc: 10000}
