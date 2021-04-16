@@ -1,0 +1,103 @@
+function Person(name, age, address){
+    this.name = name;
+    this.age =age;
+    this.address = address;
+}
+Person.prototype.printPersonDetails = function(){
+console.log(`Name ${this.name} Age ${this.age} Address ${this.address}`);
+}
+ƒ (){
+console.log(`Name ${this.name} Age ${this.age} Address ${this.address}`);
+}
+function Customer(id, balance, name, age, address){
+    this.id = id;
+    this.balance = balance;
+}
+Customer.prototype.printCustomerDetails = function(){
+    console.log(`Id ${this.id} Balance ${this.balance}`);
+}
+ƒ (){
+    console.log(`Id ${this.id} Balance ${this.balance}`);
+}
+Customer.prototype
+{printCustomerDetails: ƒ, constructor: ƒ}printCustomerDetails: ƒ ()constructor: ƒ Customer(id, balance, name, age, address)__proto__: Object
+Customer.prototype.__proto__ == Object.prototype;
+true
+Customer.prototype.__proto__ == Person.prototype;
+false
+Customer.prototype.__proto__ = Person.prototype;
+{printPersonDetails: ƒ, constructor: ƒ}
+Customer.prototype.__proto__ == Object.prototype;
+false
+Customer.prototype.__proto__ == Person.prototype;
+true
+var ram = new Customer(1001, 9999, 'Ram',21, 'Delhi');
+undefined
+ram;
+Customer {id: 1001, balance: 9999}balance: 9999id: 1001__proto__: PersonprintCustomerDetails: ƒ ()constructor: ƒ Customer(id, balance, name, age, address)__proto__: printPersonDetails: ƒ ()constructor: ƒ Person(name, age, address)__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()
+ram.__proto__ == Customer.prototype;
+true
+ram.__proto__.__proto__== Person.prototype;
+true
+ram.__proto__.__proto__.__proto__ == Object.prototype;
+true
+ram.__proto__.__proto__.__proto__.__proto__;
+null
+ram.printCustomerDetails();
+VM692:6 Id 1001 Balance 9999
+undefined
+ram.printPersonDetails();
+VM352:7 Name undefined Age undefined Address undefined
+undefined
+ram.__proto__.cons
+undefined
+ram.__proto__.constructor == Customer;
+true
+ram.__proto__.__proto__.constructor == Person;
+true
+Customer;
+ƒ Customer(id, balance, name, age, address){
+    this.id = id;
+    this.balance = balance;
+}
+typeof Customer;
+"function"
+Customer.prototype
+Person {printCustomerDetails: ƒ, constructor: ƒ}
+Customer.prototype.constructor;
+ƒ Customer(id, balance, name, age, address){
+    this.id = id;
+    this.balance = balance;
+}
+Customer.__proto__
+ƒ () { [native code] }
+Customer.__proto__== Function.prototype;
+true
+Customer.prototype;
+Person {printCustomerDetails: ƒ, constructor: ƒ}
+Customer.prototype == Customer.__proto__;
+false
+function Person(name, age, address){
+    this.name = name;
+    this.age =age;
+    this.address = address;
+}
+Person.prototype.printPersonDetails = function(){
+console.log(`Name ${this.name} Age ${this.age} Address ${this.address}`);
+}
+function Customer(id, balance, name, age, address){
+    Person.call(this, name, age, address);
+    this.id = id;
+    this.balance = balance;
+}
+Customer.prototype.printCustomerDetails = function(){
+    this.printPersonDetails();
+    console.log(`Id ${this.id} Balance ${this.balance}`);
+}
+Customer.prototype.__proto__ = Person.prototype;
+var ram = new Customer(1001, 9999, 'Ram',21, 'Delhi');
+ram.printCustomerDetails();
+
+VM2542:7 Name Ram Age 21 Address Delhi
+VM2542:16 Id 1001 Balance 9999
+undefined
