@@ -1,0 +1,49 @@
+class Person{
+constructor(name, age, address){
+    this.name = name;
+    this.age = age;
+    this.address = address;
+}
+printPersonDetails(){
+console.log(`Name ${this.name} Age ${this.age} Address ${this.address}`);
+}
+}
+class Customer extends Person{
+    constructor(id, balance, name, age, address){
+        super(name, age, address)
+        this.id = id;
+        this.balance = balance;
+}
+printCustomerDetails(){
+super.printPersonDetails();
+console.log(`Id ${this.id} Balance ${this.balance}`);
+}
+}
+var ram = new Customer(1001, 9999, 'Ram',21, 'Delhi');
+ram.printCustomerDetails();
+VM965:8 Name Ram Age 21 Address Delhi
+VM965:19 Id 1001 Balance 9999
+undefined
+typeof Customer;
+"function"
+typeof Person;
+"function"
+Customer.prototype
+Person {constructor: ƒ, printCustomerDetails: ƒ}
+Customer.prototype.__proto__ == Person.prototype;
+true
+Customer.prototype.computeSalary = function(){
+}
+ƒ (){
+}
+Customer.prototype;
+Person {computeSalary: ƒ, constructor: ƒ, printCustomerDetails: ƒ}
+Customer.prototype;
+Person {computeSalary: ƒ, constructor: ƒ, printCustomerDetails: ƒ}
+typeof Customer.prototype;
+"object"
+typeof Customer.__proto__
+"function"
+console.dir(Customer);
+VM1669:1 class Customer
+undefined

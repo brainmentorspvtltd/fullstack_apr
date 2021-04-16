@@ -1,0 +1,110 @@
+function whoAmI(){
+console.log('I am ', this );
+}
+undefined
+whoAmI();// window.whoAmI();
+VM111:2 I am  Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var obj = new whoAmI();
+VM111:2 I am  whoAmI {}
+undefined
+var obj = {name:'Ram', id : 1001};
+undefined
+obj.whoAmI;
+undefined
+obj.whoAmI();
+VM324:1 Uncaught TypeError: obj.whoAmI is not a function
+    at <anonymous>:1:5
+(anonymous) @ VM324:1
+console.dir(whoAmI);
+VM441:1 ƒ whoAmI()arguments: nullcaller: nulllength: 0name: "whoAmI"prototype: {constructor: ƒ}__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: constructor: ƒ Object()hasOwnProperty: ƒ hasOwnProperty()isPrototypeOf: ƒ isPrototypeOf()propertyIsEnumerable: ƒ propertyIsEnumerable()toLocaleString: ƒ toLocaleString()toString: ƒ toString()valueOf: ƒ valueOf()__defineGetter__: ƒ __defineGetter__()__defineSetter__: ƒ __defineSetter__()__lookupGetter__: ƒ __lookupGetter__()__lookupSetter__: ƒ __lookupSetter__()get __proto__: ƒ __proto__()set __proto__: ƒ __proto__()[[FunctionLocation]]: ​[[Scopes]]: Scopes[0][[FunctionLocation]]: VM111:1[[Scopes]]: Scopes[1]
+undefined
+whoAmI.prototype;
+{constructor: ƒ}
+whoAmI.__proto__
+ƒ () { [native code] }
+whoAmI.__proto__()
+undefined
+typeof whoAmI.prototype;
+"object"
+typeof whoAmI.__proto__
+"function"
+whoAmI.call(obj);
+VM111:2 I am  {name: "Ram", id: 1001}
+undefined
+whoAmI();
+VM111:2 I am  Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+function whoAmI(age, address){
+console.log('I am ', this.name );
+}
+undefined
+var name = 'Amit';
+undefined
+window.name;
+"Amit"
+function whoAmI(age, address){
+console.log('I am ', this.name, age, address );
+}
+undefined
+whoAmI(21,'Delhi');
+VM970:2 I am  Amit 21 Delhi
+undefined
+var obj = {name:'Ram'};
+undefined
+whoAmI.call(obj, 22, 'Delhi');
+VM970:2 I am  Ram 22 Delhi
+undefined
+var arr = [22, 'Delhi'];
+whoAmI.apply(obj, arr);
+VM970:2 I am  Ram 22 Delhi
+undefined
+var a = [10,20,30,40,50,60,70];
+undefined
+var x = a[0];
+undefined
+var y = a[1];
+undefined
+x;
+10
+y;
+20
+var [x,y,z] = a;
+undefined
+x;
+10
+y;
+20
+z;
+30
+a;
+(7) [10, 20, 30, 40, 50, 60, 70]
+var [x,,,,z] = a;
+undefined
+x;
+10
+z;
+50
+function myapply([age, address]){
+    console.log(age, address);
+}
+undefined
+var arr = [21, 'Delhi'];
+myapply(arr);
+VM1675:2 21 "Delhi"
+undefined
+var fn = whoAmI.bind(obj);
+undefined
+fn;
+ƒ whoAmI(age, address){
+console.log('I am ', this.name, age, address );
+}
+fn(21, 'Delhi');
+VM970:2 I am  Ram 21 Delhi
+undefined
+fn(21, 'Delhi');
+VM970:2 I am  Ram 21 Delhi
+undefined
+fn(21, 'Delhi');
+VM970:2 I am  Ram 21 Delhi
+undefined
