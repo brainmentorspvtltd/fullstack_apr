@@ -1,0 +1,155 @@
+api.giphy.com/v1/gifs/search?api_key= vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH&q=Iron Man&limit=5
+vFRSFWo6g7vJ7ZAjt3DMDolU52ORTxwH
+
+
+CallBack , Promise,
+Ajax 
+XMLHttpRequest
+Fetch
+Sync Style Code , Behave Async 
+function b(){
+
+}
+function a(b){
+	setTimeout()
+}
+
+Async 
+show(a)
+
+Sync Code
+var x  = show();
+
+
+function show(){
+var t = disp();
+return t;
+}
+
+Person name, age, address
+printPersonDetails
+
+Customer id, balance
+printCustomerDetails
+
+Implicit Binding of an function
+window
+
+Explicit Binding of an function
+1. new, function constructor
+2. A B C of Function
+A - Apply
+B - Bind
+C - Call
+
+OOJS
+
+
+‘use strict’ (Function Level, File Level)
+
+push, pop, shift, unshift, splice del,replace insert
+filter, find, findindex, foreach
+map, reduce, sort, some, every
+
+HOF - Higher Order Function
+Function Pass as an argument in a function
+Function return Function 
+Both
+
+
+
+Functional Programming
+1. Declarative Programming vs Imperative Programming
+2. Functions are 1st class citizen
+3. function return function , function can pass a function as an argument
+and function is like a data type.
+4. Pure Function 
+5. No Side effects
+6. Lambda (Arrow)
+7. Easy to find Bugs
+8. Closure, IIFE, CallBack, Curry
+
+Function Creation Ways
+1. Function Definition 
+2. Anonymous Function / Function Expression
+a) Nested , Closure, IIFE
+b) Event Binding
+3. Named Function Expression
+4. Arrow Function
+Best Practices
+Closure, IIFE, Memoization, Curry
+
+Hositing + INitalization
+
+JQuery Library
+
+default arguments ES6 / Truthy and Falsy
+arguments, rest parameter (ES6), spread (es6)
+Function Define
+add();   - 0 done
+add(10,20)  - 30 done
+add(1,2,3) - 6 done
+add(1,2,3,4) - 10 done
+add(1,”2”,3,”4”) - 10 done
+add(1, “2”,3,”four”) - 6 done
+add(1, “2”, three, “four”) - 6 done
+add(1, “2”, three, “four”,[4,”1”]) 11
+
+function three(){
+return 3;
+}
+
+
+
+Basic
+Functional 
+OOJS
+Async
+DOM
+
+GC Algo
+1. null
+2. reassign 
+3. scope base
+
+var arr = [10,20,30];
+var arr2 = [90,100];
+arr = arr2;
+
+var price = “Rs10,000.00”; // Formatted
+
+var price2 = 10000; // Unformatted (Calc)
+
+Immutablity vs Mutablity
+Object Clone
+e.g Object.assign
+
+Value Types (Immutable)
+1. undefined
+2. number ( Decimal / Non Decimal / Infinity / NaN) (64 bit)
+parseInt , parseFloat, isNaN, isFinite
+3. string “ ” , ‘ ‘ , ` ` (String Interpolation) (ES6)
+4. boolean (true - 1 /false - 0)
+5. bigint (Literal e.g 100n, BigInt function) / ES 2020 (ES11)
+6. null (remove reference)
+7. symbol
+
+
+
+
+Reference Type
+String/ Boolean / Number  (Wrapper Types) (AutoBoxing)
+1. Array. 
+2. {key:value}
+Access dot (.) [] (Association)
+
+e.g var arr = [10,20];
+arr is a reference type, it hold the reference
+
+var x = 100; // Decimal / Non Decimal
+
+
+ES 2020 (RAM Size) (bigint)
+
+
+
