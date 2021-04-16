@@ -1,0 +1,191 @@
+var obj = {id:1001,name:'Ram', salary:9999};
+undefined
+typeof obj;
+"object"
+obj instanceof Object;
+true
+function createEmployee(id, name, salary){
+var obj = {};
+obj.id = id;
+obj.name = name;
+obj.salary = salary;
+return obj;
+}
+undefined
+var ram = createEmployee(1001, "ram",9999);
+undefined
+ram;
+{id: 1001, name: "ram", salary: 9999}
+var shyam = createEmployee(1002, "Shyam",54354);
+undefined
+shyam;
+{id: 1002, name: "Shyam", salary: 54354}id: 1002name: "Shyam"salary: 54354__proto__: Object
+ram == shyam;
+false
+ram instanceof Object;
+true
+ram instanceof createEmployee;
+false
+function Employee(id, name, salary){
+
+}
+var ram = new Employee();
+undefined
+ram;
+Employee {}__proto__: constructor: ƒ Employee(id, name, salary)__proto__: Object
+ram instanceof Employee;
+true
+function show(){
+console.log(this);
+}
+undefined
+show(); // window.show();
+VM1013:2 Window {window: Window, self: Window, document: document, name: "", location: Location, …}
+undefined
+var e = new show();
+VM1013:2 show {}
+undefined
+e instanceof show;
+true
+function Employee(id, name, salary){
+// var this = {}
+this.id = id;
+this.name = name;
+this.salary = salary;
+}
+var ram = new Employee(1001, "Ram", 9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: Object
+ram instanceof Employee;
+true
+function Employee(id, name, salary){
+// var this = {}
+this.id = id;
+this.name = name;
+this.salary = salary;
+this.printEmployee = function(){
+console.log(`Id ${this.id} Name ${this.name} ${this.salary}`);
+}
+}
+var ram = new Employee(1001, "Ram", 9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999, printEmployee: ƒ}
+var shyam = new Employee(1002, "Shyam",5555);
+undefined
+shyam;
+Employee {id: 1002, name: "Shyam", salary: 5555, printEmployee: ƒ}
+function Employee(id, name, salary){
+// var this = {}
+this.id = id;
+this.name = name;
+this.salary = salary;
+
+}
+var ram = new Employee(1001, "Ram", 9999);
+undefined
+console.dir(Employee);
+VM1807:1 ƒ Employee(id, name, salary)arguments: nullcaller: nulllength: 3name: "Employee"prototype: {constructor: ƒ}constructor: ƒ Employee(id, name, salary)__proto__: Object__proto__: ƒ ()[[FunctionLocation]]: VM1750:1[[Scopes]]: Scopes[1]
+undefined
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]concat: ƒ concat()constructor: ƒ Array()copyWithin: ƒ copyWithin()entries: ƒ entries()every: ƒ every()fill: ƒ fill()filter: ƒ filter()find: ƒ find()findIndex: ƒ findIndex()flat: ƒ flat()flatMap: ƒ flatMap()forEach: ƒ forEach()includes: ƒ includes()indexOf: ƒ indexOf()join: ƒ join()keys: ƒ keys()lastIndexOf: ƒ lastIndexOf()length: 0map: ƒ map()pop: ƒ pop()push: ƒ push()reduce: ƒ reduce()reduceRight: ƒ reduceRight()reverse: ƒ reverse()shift: ƒ shift()slice: ƒ slice()some: ƒ some()sort: ƒ sort()splice: ƒ splice()toLocaleString: ƒ toLocaleString()toString: ƒ toString()unshift: ƒ unshift()values: ƒ values()Symbol(Symbol.iterator): ƒ values()Symbol(Symbol.unscopables): {copyWithin: true, entries: true, fill: true, find: true, findIndex: true, …}__proto__: Object
+Employee.prototype
+{constructor: ƒ}
+typeof Employee.prototype;
+"object"
+Employee.prototype.constructor == Employee
+true
+Employee.prototype
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary)__proto__: Object
+ram instanceof Employee;
+true
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: constructor: ƒ Employee(id, name, salary)__proto__: Object
+ram.__proto__
+{constructor: ƒ}constructor: ƒ Employee(id, name, salary)__proto__: Object
+ram.__proto__ == Employee.prototype;
+true
+ram.__proto__.constructor
+ƒ Employee(id, name, salary){
+// var this = {}
+this.id = id;
+this.name = name;
+this.salary = salary;
+
+}
+ram.__proto__.cons
+undefined
+ram.__proto__.constructor== Employee;
+true
+Employee.prototype.printEmployee = function(){
+console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}`);
+}
+ƒ (){
+console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}`);
+}
+var ram = new Employee(1001, "Ram",9999);
+undefined
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}id: 1001name: "Ram"salary: 9999__proto__: printEmployee: ƒ ()constructor: ƒ Employee(id, name, salary)__proto__: Object
+ram.id;
+1001
+ram.printEmployee();
+VM2489:2 Id 1001 Name Ram Salary 9999
+undefined
+ram.__proto__.printEmployee
+ƒ (){
+console.log(`Id ${this.id} Name ${this.name} Salary ${this.salary}`);
+}
+ram.__proto__.printEmployee();
+VM2489:2 Id undefined Name undefined Salary undefined
+undefined
+ram instanceof Employee;
+true
+ram instanceof Object;
+true
+ram.__proto__ == Employee.prototype;
+true
+ram.__proto__.__proto__ == Object.prototype;
+true
+ram.__proto__;
+{printEmployee: ƒ, constructor: ƒ}
+ram.__proto__.__proto__;
+{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+ram.__proto__.__proto__.__proto__;
+null
+ram;
+Employee {id: 1001, name: "Ram", salary: 9999}
+console.log('Ram is '+ram);
+VM3209:1 Ram is [object Object]
+undefined
+ram.toString();
+"[object Object]"
+Object.prototype.toString
+ƒ toString() { [native code] }
+Employee.prototype.toString = function(){
+    return "Id "+this.id + " Name "+this.name +" Salary "+this.salary;
+}
+ƒ (){
+    return "Id "+this.id + " Name "+this.name +" Salary "+this.salary;
+}
+ram.toString();
+"Id 1001 Name Ram Salary 9999"
+console.log('Ram is '+ram);
+VM3514:1 Ram is Id 1001 Name Ram Salary 9999
+undefined
+var shyam = new Employee(1002, "Shyam",5555);
+undefined
+shyam.printEmployee();
+VM2489:2 Id 1002 Name Shyam Salary 5555
+undefined
+shyam.toString();
+"Id 1002 Name Shyam Salary 5555"
+ram.__proto__ == shyam.__proto__
+true
+ram.__proto__ == Employee.prototype
+true
+shyam.__proto__ == Employee.prototype;
+true
+ram.__proto__.__proto__ == Object.prototype;
+true
