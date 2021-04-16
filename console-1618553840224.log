@@ -1,0 +1,359 @@
+var obj = {id:1001, name:'Ram'};
+undefined
+obj.id;
+1001
+obj[id]
+VM116:1 Uncaught ReferenceError: id is not defined
+    at <anonymous>:1:5
+(anonymous) @ VM116:1
+obj["id"]
+1001
+typeof obj;
+"object"
+obj instanceof Object;
+true
+typeof Object;
+"function"
+var x = 100;
+undefined
+typeof x;
+"number"
+x= 'Amit';
+"Amit"
+typeof x;
+"string"
+var x = 100;
+undefined
+typeof x;
+"number"
+var arr = [10,20,30];
+undefined
+arr instanceof Array;
+true
+arr instanceof Object;
+true
+var cache = {} ;
+
+function doLongTask(num){
+if(cache[num]){
+console.log('Coming from the Cache ',cache[num]);
+return ;
+}
+for(let i = 1; i<=100000; i++){
+for(let j = 1; j<=20000; j++){
+
+}
+
+}
+cache[num] = num ** 3;
+console.log('Coming from Calc ',cache[num]);
+}
+undefined
+doLongTask(3);
+VM976:15 Coming from Calc  27
+undefined
+cache;
+{3: 27}
+doLongTask(5);
+VM976:15 Coming from Calc  125
+undefined
+cache;
+{3: 27, 5: 125}
+doLongTask(3);
+VM976:5 Coming from the Cache  27
+undefined
+function curry(a){
+    return function(b){
+        return function(c){
+             return function(d){
+                return a + b + c + d;
+
+}   
+    }
+}
+}
+undefined
+curry('Oil')('Onion')('Salt')('Veg')
+"OilOnionSaltVeg"
+function curry(a){
+    return function(b){
+        return function(c){
+             return function(d){
+                return a + b + c + d;
+
+}   
+    }
+}
+}
+undefined
+var x = 'Amit';
+undefined
+x.toUpperCase().substring(1);
+"MIT"
+function add(x,y){
+return x + y;
+}
+undefined
+add(10,20);
+30
+const adder = (x,y)=>x+y;
+undefined
+typeof adder;
+"function"
+adder(10,20);
+30
+const adder2 = (x,y)=>{
+console.log('x is ',x, 'y is ',y);
+return x+y;
+}
+undefined
+adder2(10,20);
+VM1727:2 x is  10 y is  20
+30
+var arr = [10,20,90,10,100,90,10,20];
+undefined
+var sub =[];
+for(let i = 0; i<arr.length; i++){
+if(arr[i]>20){
+sub.push(arr[i]);
+}
+}
+undefined
+sub;
+(3) [90, 100, 90]
+arr.filter(element=>element>20);
+(3) [90, 100, 90]
+typeof Array;
+"function"
+typeof Object
+"function"
+arr;
+(8) [10, 20, 90, 10, 100, 90, 10, 20]
+arr.push(1);
+9
+arr.unshift(2);
+10
+arr;
+(10) [2, 10, 20, 90, 10, 100, 90, 10, 20, 1]
+arr.pop();
+1
+arr;
+(9) [2, 10, 20, 90, 10, 100, 90, 10, 20]
+arr.shift();
+2
+arr;
+(8) [10, 20, 90, 10, 100, 90, 10, 20]
+arr.splice(1);
+(7) [20, 90, 10, 100, 90, 10, 20]
+arr;
+[10]
+arr = [10,20,90,1,90,10,11];
+(7) [10, 20, 90, 1, 90, 10, 11]
+arr.splice(1,1);
+[20]
+arr;
+(6) [10, 90, 1, 90, 10, 11]
+arr.splice(1,1,1000);
+[90]
+arr;
+(6) [10, 1000, 1, 90, 10, 11]
+arr.splice(1,0,555);
+[]
+arr;
+(7) [10, 555, 1000, 1, 90, 10, 11]
+arr.insert
+undefined
+Array.prototype
+[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+Array.prototype.filter
+ƒ filter() { [native code] }
+Array.prototype.insert = function(){
+
+}
+ƒ (){
+
+}
+arr.insert
+ƒ (){
+
+}
+Array.prototype.insert = function(){
+    console.log(this);
+}
+ƒ (){
+    console.log(this);
+}
+arr.insert();
+VM2988:2 (7) [10, 555, 1000, 1, 90, 10, 11]
+undefined
+Array.prototype.insert = function(index, val){
+    this.splice( index, 0,val);   
+    return "Inserted ";
+//console.log(this);
+}
+ƒ (index, val){
+    this.splice( index, 0,val);   
+    return "Inserted ";
+//console.log(this);
+}
+arr;
+(7) [10, 555, 1000, 1, 90, 10, 11]
+arr.insert(2, 9999);
+"Inserted "
+arr;
+(8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+arr;
+(8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+typeof arr.forEach
+"function"
+arr.forEach(element=>console.log(element));
+VM3391:1 10
+VM3391:1 555
+VM3391:1 9999
+VM3391:1 1000
+VM3391:1 1
+VM3391:1 90
+VM3391:1 10
+VM3391:1 11
+undefined
+arr.forEach((element, index)=>console.log(element, index));
+VM3439:1 10 0
+VM3439:1 555 1
+VM3439:1 9999 2
+VM3439:1 1000 3
+VM3439:1 1 4
+VM3439:1 90 5
+VM3439:1 10 6
+VM3439:1 11 7
+undefined
+Array.prototype.forEach
+ƒ forEach() { [native code] }
+console.dir(Array.prototype.forEach);
+VM3655:1 ƒ forEach()arguments: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    at Function.o (<anonymous>:1:83)]caller: [Exception: TypeError: 'caller', 'callee', and 'arguments' properties may not be accessed on strict mode functions or the arguments objects for calls to them
+    at Function.o (<anonymous>:1:83)]length: 1name: "forEach"__proto__: ƒ ()apply: ƒ apply()arguments: (...)bind: ƒ bind()call: ƒ call()caller: (...)constructor: ƒ Function()length: 0name: ""toString: ƒ toString()Symbol(Symbol.hasInstance): ƒ [Symbol.hasInstance]()get arguments: ƒ ()set arguments: ƒ ()get caller: ƒ ()set caller: ƒ ()__proto__: Object[[FunctionLocation]]: ​[[Scopes]]: Scopes[0][[Scopes]]: Scopes[0]No properties
+undefined
+arr.forEach((element, index, a)=>console.log(element, index, a));
+VM3685:1 10 0 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 555 1 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 9999 2 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 1000 3 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 1 4 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 90 5 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 10 6 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3685:1 11 7 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+undefined
+arr.forEach((e, i, a)=>console.log(e, i, a));
+VM3712:1 10 0 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 555 1 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 9999 2 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 1000 3 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 1 4 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 90 5 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 10 6 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+VM3712:1 11 7 (8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+undefined
+arr;
+(8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+arr.find(element=>element==10);
+10
+arr.find(element=>element==1000000);
+undefined
+arr.findIndex(element=>element==1000000);
+-1
+arr.findIndex(element=>element==10);
+0
+arr.filter(element=>element==10);
+(2) [10, 10]
+var ee = arr.filter(element=>true);
+undefined
+ee;
+(8) [10, 555, 9999, 1000, 1, 90, 10, 11]
+ee == arr;
+false
+arr = arr.filter(element=>!(element>90));
+(5) [10, 1, 90, 10, 11]
+arr;
+(5) [10, 1, 90, 10, 11]
+arr;
+(5) [10, 1, 90, 10, 11]
+arr = [10,20,90,1,90,10,11];
+(7) [10, 20, 90, 1, 90, 10, 11]
+arr.map(element=>element + element * 0.18);
+(7) [11.8, 23.6, 106.2, 1.18, 106.2, 11.8, 12.98]
+arr;
+(7) [10, 20, 90, 1, 90, 10, 11]
+arr.map(element=>`Rs ${element}`);
+(7) ["Rs 10", "Rs 20", "Rs 90", "Rs 1", "Rs 90", "Rs 10", "Rs 11"]
+var arr2 = arr.map(element=>`Rs ${element}`);
+undefined
+arr2;
+(7) ["Rs 10", "Rs 20", "Rs 90", "Rs 1", "Rs 90", "Rs 10", "Rs 11"]
+arr2 instanceof Array;
+true
+arr2[0];
+"Rs 10"
+var d = arr.map(e=>e);
+undefined
+d == arr;
+false
+arr;
+(7) [10, 20, 90, 1, 90, 10, 11]
+var sum = 0;
+for(let i = 0 ; i<arr.length; i++){
+sum+=arr[i];
+}
+console.log(sum);
+VM4986:5 232
+undefined
+arr.reduce((acc,currentElement)=>acc+currentElement, acc=0);
+232
+arr.reduce((acc,currentElement)=>acc+currentElement);
+232
+arr.filter(ele=>ele>20);
+(2) [90, 90]
+arr.reduce((acc, currentElement)=>{
+    if(currentElement>20){
+        acc.push(currentElement);
+}
+return acc;
+}, acc = [])
+(2) [90, 90]
+arr;
+(7) [10, 20, 90, 1, 90, 10, 11]
+arr.sort();
+(7) [1, 10, 10, 11, 20, 90, 90]
+arr.push(111);
+8
+arr.sort();
+(8) [1, 10, 10, 11, 111, 20, 90, 90]
+arr.sort((first, second)=>first - second);
+(8) [1, 10, 10, 11, 20, 90, 90, 111]
+arr;
+(8) [1, 10, 10, 11, 20, 90, 90, 111]
+arr.sort((first, second)=>second - first);
+(8) [111, 90, 90, 20, 11, 10, 10, 1]
+var names = ['anil','ram','amit','shyam','ajay'];
+undefined
+'anil' - 'ram';
+NaN
+'anil'.localeCompare('ram')
+-1
+'ram'.localeCompare('anil')
+1
+'ram'.localeCompare('ram')
+0
+names.sort((first, second)=>first.localeCompare(second));
+(5) ["ajay", "amit", "anil", "ram", "shyam"]
+names;
+(5) ["ajay", "amit", "anil", "ram", "shyam"]
+var products = [{name:'Apple',price:90000, qty:2},{name:'Samsung',price:70000, qty:3}];
+undefined
+products.sort((first, second)=>first.price - second.price);
+(2) [{…}, {…}]0: {name: "Samsung", price: 70000, qty: 3}1: {name: "Apple", price: 90000, qty: 2}length: 2__proto__: Array(0)
+arr;
+(8) [111, 90, 90, 20, 11, 10, 10, 1]
+arr.some(ele=>ele>20);
+true
+arr.every(ele=>ele>20);
+false
