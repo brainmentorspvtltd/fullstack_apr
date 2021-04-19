@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #parent_1,
+        #parent_2 {
+            background-color: lightskyblue;
+        }
+
+        /* #parent_1 h2 {
+            color: red;
+        } */
+        #parent_1 .child h2 {
+            color: red;
+        }
+        #parent_1.section {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Basic Selectors</h1>
+
+    <div id="parent_1" class="section">
+        <h2>This heading is child of parent_1</h2>
+        <div class="child">
+            <h2>This heading is grand child of parent_1</h2>
+            <h2>This heading is grand child of parent_1</h2>
+        </div>
+        <h2>This is also a child of parent_1</h2>
+    </div>
+
+    <hr>
+
+    <div id="parent_2" class="section">
+        <h2>This heading is child of parent_2</h2>
+        <div class="child">
+            <h2>This heading is grand child of parent_2</h2>
+            <h2>This heading is grand child of parent_2</h2>
+        </div>
+        <h2>This is also a child of parent_2</h2>
+    </div>
+    
+</body>
+</html>
