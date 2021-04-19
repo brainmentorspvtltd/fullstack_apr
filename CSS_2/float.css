@@ -1,0 +1,36 @@
+/* * - universal selectors */
+/* * {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+h2 {
+    margin-bottom: 10px;
+} */
+
+/* pseudo element - after and before */
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.col-1 {
+    background-color: lightblue;
+    width: 40%;
+    float: left;
+}
+/*  */
+.col-2 {
+    background-color: lightcoral;
+    float: right;
+    width: 40%;
+}
+
+.div_1 {
+    background-color: lightgray;
+}
