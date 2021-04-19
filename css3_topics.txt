@@ -7,6 +7,7 @@ Basics
   - Shadow
 Animations and Transformations
 - Translate, Rotate, Scale, Skew
+- Perspective
 - 2D + 3D Animations
 RWD - Responsive Web Design
 - Flexbox
@@ -14,8 +15,12 @@ RWD - Responsive Web Design
 - Media Queries
 
 
-
-
+Breakpoints
+1400px - XXL
+1200PX - XL
+992PX  - LG
+768PX  - MD   
+576PX  - SM
 
 
 
