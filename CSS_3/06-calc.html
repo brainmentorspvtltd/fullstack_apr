@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --primary-color : red;
+            --img-width-1 : 80%;
+            --img-width-2 : 40%;
+            --img-height : 100%;
+        }
+        img {
+            /* width: calc(100% - var(--img-width-1)); */
+            position: fixed;
+            height: calc(var(--img-height) - 15%);
+            width: var(--img-width-1);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Calc in CSS</h1>
+
+    <div>
+        <img src="https://c.ndtvimg.com/2020-03/bthb68ug_virat-kohli-afp_625x300_27_March_20.jpg" alt="">
+    </div>
+    
+</body>
+</html>
